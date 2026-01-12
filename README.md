@@ -128,6 +128,4 @@ License
 
 This repository is provided as an example. Add a license file if you plan to publish it publicly.
 
----
-Generated with assistance to simplify running and serving a scikit-learn example.
 
