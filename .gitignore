@@ -24,5 +24,4 @@ Thumbs.db
 
 # Logs, reports and runtime files
 *.log
-reports/
 model.joblib
