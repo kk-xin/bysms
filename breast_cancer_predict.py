@@ -136,12 +136,13 @@ def generate_report(model_path: str, out_dir: str = "reports"):
             f.write("<h3>Classification report</h3>\n<pre>")
             f.write(classification_report(y, y_pred, target_names=data.target_names))
             f.write("</pre>\n")
+            # Use absolute paths under /reports/ so Flask can serve static images correctly
             if conf_path.exists():
-                f.write(f"<h3>Confusion Matrix</h3><img src=\"{conf_path.name}\" style=\"max-width:800px;\"><br/>\n")
+                f.write(f"<h3>Confusion Matrix</h3><img src=\"/reports/{conf_path.name}\" style=\"max-width:800px;\"><br/>\n")
             if (outp / "roc_curve.png").exists():
-                f.write(f"<h3>ROC Curve</h3><img src=\"roc_curve.png\" style=\"max-width:800px;\"><br/>\n")
+                f.write(f"<h3>ROC Curve</h3><img src=\"/reports/roc_curve.png\" style=\"max-width:800px;\"><br/>\n")
             if (outp / "feature_importances.png").exists():
-                f.write(f"<h3>Feature Importances</h3><img src=\"feature_importances.png\" style=\"max-width:800px;\"><br/>\n")
+                f.write(f"<h3>Feature Importances</h3><img src=\"/reports/feature_importances.png\" style=\"max-width:800px;\"><br/>\n")
             f.write("</body></html>")
         print(f"Saved HTML report: {html_path}")
     except Exception as e:
