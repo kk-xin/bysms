@@ -126,11 +126,11 @@ Feel free to open issues or PRs. Suggested improvements:
 
 License
 
-This repository is provided as an example. Add a license file if you plan to publish it publicly.
-
 ## Experimental Results
 
 The following images were produced by the `report` command (see `breast_cancer_predict.py report`) and saved into the `reports/` folder. They are presented here in the same order they appear in the report output.
+
+Reported accuracy (from the full dataset report): **0.9842**.
 
 1) Confusion matrix
 
